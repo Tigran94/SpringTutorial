@@ -15,6 +15,7 @@ public class DemoApplication {
 		if(obj instanceof ModelT1000){
 			ModelT1000 t1000 = (ModelT1000) obj;
 			t1000.fire();
+
 		}
 
 	}
