@@ -31,7 +31,7 @@ public class ModelT1000 implements Robot{
     }
 
     @Override
-    public void dance(){
+    public void action(){
         System.out.println("T1000 is dancing!");
     }
 }

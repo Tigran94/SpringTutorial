@@ -3,5 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="t1000" class="springmaventutorial.ModelT1000"></bean>
+    <bean id="t1000" class="springmaventutorial.ModelT1000">
+        <constructor-arg ref="sonyHand"> </constructor-arg>
+        <constructor-arg ref="sonyLeg"> </constructor-arg>
+        <constructor-arg ref="sonyHead"> </constructor-arg>
+    </bean>
+
+
+    <bean id="sonyHand" class="sony.SonyHand"></bean>
+    <bean id="sonyHead" class="sony.SonyHead"></bean>
+    <bean id="sonyLeg" class="sony.SonyLeg"></bean>
+
+    <bean id="toshibaHand" class="toshiba.ToshibaHand"></bean>
+    <bean id="toshibaHead" class="toshiba.ToshibaHead"></bean>
+    <bean id="toshibaLeg" class="toshiba.ToshibaLeg"></bean>
 </beans>
