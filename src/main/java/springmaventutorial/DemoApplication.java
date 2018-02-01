@@ -16,6 +16,8 @@ public class DemoApplication {
 			ModelT1000 t1000 = (ModelT1000) obj;
 			t1000.fire();
 
+
+
 		}
 
 	}
