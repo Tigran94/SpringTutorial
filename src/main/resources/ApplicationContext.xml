@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="t1000" class="springmaventutorial.ModelT1000">
-        <constructor-arg ref="sonyHand"> </constructor-arg>
-        <constructor-arg ref="sonyLeg"> </constructor-arg>
-        <constructor-arg ref="sonyHead"> </constructor-arg>
+    <bean name="t1000" class="springmaventutorial.ModelT1000"
+    p:hand-ref="toshibaHand"
+    p:leg-ref="sonyLeg"
+    p:head-ref="toshibaHead">
 
-        <property name="hand" ref="toshibaHand"></property>
-        <property name="head" ref="toshibaHead"></property>
-        <property name="leg" ref="toshibaLeg"></property>
+        <constructor-arg value="true" index="2" type="boolean"> </constructor-arg>
+        <constructor-arg value="silver" index="0" type="java.lang.String"> </constructor-arg>
+        <constructor-arg value="2006" index="1" type="int"> </constructor-arg>
+
+
+        <!--<property name="hand" ref="toshibaHand"></property>-->
+        <!--<property name="head" ref="toshibaHead"></property>-->
+        <!--<property name="leg" ref="toshibaLeg"></property>-->
     </bean>
 
+    <bean id="t1000Empty" class="springmaventutorial.ModelT1000">
+
+        <constructor-arg ref="sonyHand" > </constructor-arg>
+        <constructor-arg ref="sonyLeg" > </constructor-arg>
+        <constructor-arg ref="toshibaHead" > </constructor-arg>
+    </bean>
 
     <bean id="sonyHand" class="sony.SonyHand"></bean>
     <bean id="sonyHead" class="sony.SonyHead"></bean>
