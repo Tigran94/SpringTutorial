@@ -34,4 +34,29 @@ public class ModelT1000 implements Robot{
     public void action(){
         System.out.println("T1000 is dancing!");
     }
+
+    public Hand getHand() {
+        return hand;
+    }
+
+    public Leg getLeg() {
+        return leg;
+    }
+
+    public Head getHead() {
+        return head;
+    }
+
+    public void setHand(Hand hand) {
+        this.hand = hand;
+    }
+
+    public void setLeg(Leg leg) {
+        this.leg = leg;
+    }
+
+    public void setHead(Head head) {
+        this.head = head;
+    }
+
 }
