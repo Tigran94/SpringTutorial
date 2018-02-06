@@ -4,11 +4,17 @@ import interfaces.Hand;
 import interfaces.Head;
 import interfaces.Leg;
 import interfaces.Robot;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
 /**
  * Created by user on 1/28/18.
  */
-public class ModelT1000 implements Robot{
+public class ModelT1000 implements Robot,InitializingBean,DisposableBean{
     private Hand hand;
     private Leg leg;
     private Head head;
@@ -105,5 +111,16 @@ public class ModelT1000 implements Robot{
 
     public void setSoundEnabled(boolean soundEnabled) {
         this.soundEnabled = soundEnabled;
+    }
+
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println(this + " - method destroy");
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println(this + " - method init()");
     }
 }
