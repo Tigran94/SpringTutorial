@@ -14,7 +14,7 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 /**
  * Created by user on 1/28/18.
  */
-public class ModelT1000 implements Robot,InitializingBean,DisposableBean{
+public class ModelT1000 extends BaseModel implements Robot,InitializingBean,DisposableBean{
     private Hand hand;
     private Leg leg;
     private Head head;
